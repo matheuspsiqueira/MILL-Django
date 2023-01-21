@@ -1,0 +1,252 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <title>KingsMen's S.A</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static '/css/font-awesome.css' %}">
+  <link rel="stylesheet" href="{% static '/css/aos.css' %}">
+  <link rel="stylesheet" href="{% static '/css/style.css' %}">
+  <link rel="stylesheet" href="{% static '/css/owl.carousel.min.css' %}">
+</head>
+<body>
+
+  <!-- page loader start -->
+  <div class="page-loader"></div>
+  <!-- page loader end -->
+ 
+   <!-- header start -->
+   <link rel="stylesheet" href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' %}">
+   
+   <body>
+
+    
+         
+   <div class="navbar">
+     <a class="active" href="{% url 'index' %}"><i class="fa fa-fw fa-home"></i> Home</a> 
+     <a href="{% static '#' %}"><i class="fa fa-fw fa-envelope"></i> Contact</a> 
+     <a href="{% url 'login' %}"><i class="fa fa-fw fa-user"></i> Login</a>
+     <a href="{% url 'estoque' %}"><i class="fa fa-fw fa-search"></i> Estoque</a>
+   </div>
+   
+   </body>
+   
+  <!-- header end -->
+  <!-- home section start -->
+  <section class="home-section" id="home">
+    <div class="home-bg"></div>
+    <div class="container">
+      <div class="row min-vh-100 align-items-center">
+        <div class="home-text" data-aos="fade-up" data-aos-duration="1000">
+          <div class="titulo">
+            <h1>KingsMen's S.A</h1>
+          </div>
+          <p>Somos uma empresa de gestão de estoque que acredita no método de estocagem e gerenciamento estratégico como diferenciais competitivos. Oferecemos soluções focadas e comprometidas com a necessidade específica do seu negócio.</p>
+          <a href="{% static '#our-menu' %}" class="btn btn-default">Conheça Nossas Áreas de Atuação</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- home section end -->
+
+  <!-- about section start -->
+  <section class="about-section sec-padding" id="about">
+    <div class="container">
+      <div class="row">
+        <div class="section-title">
+          <h2 data-title="Nossa Trajetória" data-aos="fade-up">SOBRE NÓS</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="about-text" data-aos="fade-right">
+           <h3>Bem-Vindo a KingsMen's S.A</h3>
+           <p>No segmento de gestão de estoque desde 2020, a KingsMen's S.A se mostra a parceria ideal dentre as várias opções de empresas de controle de fluxo de mercadoria.</p>
+           <p>Composta por profissionais altamente qualificados e comprometidos com os objetivos dos clientes, a KingsMen's S.A é uma empresa de gestão de estoque que promove a organização e o controle de suas mercadorias em determinado espaço e tempo.</p>
+           <p>Utilizamos metodologias modernas de gestão, mantendo o equilíbrio entre compras, armazenagem e entregas, controlando as entradas e as saídas das mercadorias, movimentando seu ciclo.</p>
+           <a href="{% static '#our-menu' %}" class="btn btn-default">Métodos da Gestão de Estoque</a>
+        </div>
+        <div class="about-img" data-aos="fade-left">
+           <div class="img-box">
+             <img src="{% static 'img/galpao-leao1.png' %}" alt="about img" class="img-sobre">
+             
+           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- about section end -->
+
+  <!-- menu section start -->
+  <section class="menu-section sec-padding" id="our-menu">
+    <div class="container">
+      <div class="row">
+        <div class="section-title">
+          <h2 data-title="Segmentos" data-aos="fade-up">Principais Métodos da Gestão de Estoque</h2>
+        </div>
+      </div>
+      <div class="row menu-tab-content active" id="lunch">
+        <div class="menu-item" data-aos="fade-up-right">
+          <div class="menu-item-title">
+            <img src="{% static 'img/metodos/img1.png' %}" alt="menu item thumbnail" class="img-area">
+              <div class="section-title">
+                <h1 class="title">Método do custo específico</h1>
+                  <h4>Opções para controle de estoque recomendada para produtos como carros ou maquinários. Esse método atribui valor a cada unidade do estoque. Logo, ele é usado apenas quando é possível apurar o preço ou o custo de cada item, considerando que o valor total do estoque consiste na soma dos custos específicos dos itens.</h4>
+              </div>
+          </div>
+        </div>
+        <div class="row menu-tab-content active" id="lunch">
+          <div class="menu-item" data-aos="fade-up-right">
+            <div class="menu-item-title">
+              <img src="{% static 'img/menu/img-2.jpg' %}" alt="menu item thumbnail" class="img-area">
+                <div class="section-title">
+                  <h1 class="title">Gestão Financeira</h1>
+                    <h4>Assessoria para otimização da função financeira, com controles, indicadores de desempenho e medidas de racionalização de recursos.</h4>
+                </div>
+            </div>
+          </div>
+        <div class="row menu-tab-content active" id="lunch">
+            <div class="menu-item" data-aos="fade-up-right">
+              <div class="menu-item-title">
+                <img src="{% static 'img/menu/img-3.jpg' %}" alt="menu item thumbnail" class="img-area">
+                  <div class="section-title">
+                    <h1 class="title">Gestão Administrativa</h1>
+                      <h4>Assessoria para organização e otimização da área meio, racionalizando o macroprocesso de suporte operacional, manutenção, serviços gerais etc.</h4>
+              </div>
+            </div>
+        </div>
+        <div class="row menu-tab-content active" id="lunch">
+          <div class="menu-item" data-aos="fade-up-right">
+            <div class="menu-item-title">
+                <img src="{% static 'img/menu/img-4.jpg' %}" alt="menu item thumbnail" class="img-area">
+                  <div class="section-title">
+                    <h1 class="title">Gestão de Comunicação e Marketing</h1>
+                      <h4>Assessoria para a elaboração de planejamento e estruturação do MKT Mix para promoção da empresa e seus produtos.</h4>
+            </div>
+          </div>
+        </div>
+        <div class="row menu-tab-content active" id="lunch">
+          <div class="menu-item" data-aos="fade-up-right">
+            <div class="menu-item-title">
+                <img src="{% static 'img/menu/img-5.png' %}" alt="menu item thumbnail" class="img-area">
+                  <div class="section-title">
+                    <h1 class="title">Gestão de Riscos</h1>
+                      <h4>Assessoria para minimizar (ou até mesmo eliminar completamente) a possibilidade de impactos que sejam negativos para a organização, comprometendo a companhia ou o seu funcionamento, caso um desses riscos venha a se concretizar.</h4>
+                  </div>
+            </div>
+          </div>
+        </div>  
+      </div>
+    </div>
+  </section>
+  <!-- menu section end -->
+
+  <!-- testimonials section start -->
+  <section class="testimonials-section sec-padding" id="testimonials">
+    <div class="container">
+      <div class="row">
+        <div class="section-title">
+          <h2 data-title="Depoimentos" data-aos="fade-up"></h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="testi-item" data-aos="zoom-in">
+          <div class="testi-author">
+             <div class="testi-author-name">
+               <h3>raj himachal</h3>
+               <span>food specialist</span>
+             </div>
+             <div class="testi-author-img">
+               <img src="{% static 'img/testimonials/1.jpg' %}" alt="testi author img">
+             </div>
+          </div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <div class="ratings">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+        <div class="testi-item" data-aos="zoom-in">
+          <div class="testi-author">
+             <div class="testi-author-name">
+               <h3>raj himachal</h3>
+               <span>food specialist</span>
+             </div>
+             <div class="testi-author-img">
+               <img src="{% static 'img/testimonials/2.jpg' %}" alt="testi author img">
+             </div>
+          </div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <div class="ratings">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+        <div class="testi-item" data-aos="zoom-in">
+          <div class="testi-author">
+             <div class="testi-author-name">
+               <h3>raj himachal</h3>
+               <span>food specialist</span>
+             </div>
+             <div class="testi-author-img">
+               <img src="{% static 'img/testimonials/3.jpg' %}" alt="testi author img">
+             </div>
+          </div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <div class="ratings">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- testimonials section end -->
+
+  <!-- footer start -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="footer-item" data-aos="fade-up">
+          <h3>Localização</h3>
+          <p>Rua Coronel Carlos Matos, 96<br> Centro - Nova Iguaçu - RJ <br>CEP: 26.210-200</p>
+        </div>
+        <div class="footer-item" data-aos="fade-up">
+          <h3>Horário de Funcionamento</h3>
+          <p>Segunda à Sexta <br> 9:00 AM - 10:00 PM </p>
+        </div>
+        <div class="footer-item" data-aos="fade-up">
+          <h3>Contato</h3>
+          <p>21 9 1234-5678</p>
+          <p>kingsmen@gmail.com</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="copyright">
+         PROJETO SENAC-RJ &copy; 2022 - Designed by Equipe MIL
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- footer end -->
+  <script src="{% static '/js/aos.js' %}"></script> 
+<script src="{% static '/js/script.js' %}"></script>
+
+</body>
+</html>
