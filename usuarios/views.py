@@ -7,23 +7,21 @@ from produtos.models import Produto
 def index(request):
     return render(request, 'index.html')
 
-
 def login(request):
     if request.method == 'POST':
-        usuario = request.POST['usuario']
+        username = request.POST['username']
         senha = request.POST['senha']
 
-        if campo_vazio(usuario) or campo_vazio(senha):
+        if campo_vazio(username) or campo_vazio(senha):
             messages.error(request, 'Por favor, preencha os campos corretamente')
             return redirect('login')
 
-        if User.objects.filter(usuario=usuario).exists():
-            nome = User.objects.filter(usuario=usuario).values_list('username', flat=True).get()
+        if User.objects.filter(username=username).exists():
+            nome = User.objects.filter(username=username).values_list('username', flat=True).get()
             user = auth.authenticate(request, username=nome, password=senha)
 
             if user is not None:
                 auth.login(request, user)
-                messages.success(request, 'Login realizado com sucesso')
                 return redirect('estoque')
     else:
         return render(request, 'login.html')
@@ -35,7 +33,7 @@ def logout(request):
 def estoque(request):
     if request.user.is_authenticated:
         id = request.user.id
-        produto = Produto.objects.order_by('-date_produto').filter(pessoa=id)
+        produtos = Produto.objects.order_by('-date_produto').filter(pessoa=id)
         dados={
             'produtos' : produtos
         }
@@ -44,7 +42,7 @@ def estoque(request):
         return redirect('index')
 
 def campo_vazio(campo):
-    return not campo.stip()
+    return not campo.strip()
 
 def senha_diferente(senha, senha2):
     return senha != senha2
