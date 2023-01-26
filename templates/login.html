@@ -27,7 +27,7 @@
 			<div class="card-header">
 				<h3>Login</h3>
 			</div>
-			{% include 'partials/_alertas.html' %}
+			{% include 'partials/_alertas_login.html' %}
 			<div class="card-body">
 				<form action="{% url 'login' %}" method="POST">
 					{% csrf_token %}
@@ -48,7 +48,7 @@
 					</div>
 					<div class="form-group">
 						<button type="submit" class="btn float-right login_btn">Login</button>
-						<button class="btn float-left login_btn"><a class="active" href="{% url 'index' %}"><i class="fa fa-fw fa-home"></i> Home</a></button>
+						<a class="btn float-left login_btn" href="{% url 'index' %}">Voltar</a>
 					</div>
 				</form>
 			</div>

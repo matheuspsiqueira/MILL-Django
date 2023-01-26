@@ -7,6 +7,44 @@ from produtos.models import Produto
 def index(request):
     return render(request, 'index.html')
 
+def cadastrar_funcionario(request):
+    if request.method == 'POST':
+        nome = request.POST['nome']
+        email = request.POST['email']
+        senha = request.POST['senha']
+        senha2 = request.POST['senha2']
+
+        if campo_vazio(nome):
+            messages.error(request, 'Nome não pode ficar em branco')
+            return redirect('cadastro_funcionario')
+        
+        if campo_vazio(email):
+            messages.error(request, 'Email não pode ficar em branco')
+            return redirect('cadastro_funcionario')
+
+        if senha_diferente(senha, senha2):
+            messages.error(request, 'As senhas devem ser iguais')
+            return redirect('cadastro_funcionario')
+
+        if User.objects.filter(email=email).exists():
+            messages.error(request, 'Usuário já cadastrado')
+            return redirect('cadastro_funcionario')
+        
+        if User.objects.filter(username=nome).exists():
+            messages.error(request, 'Usuário já cadastrado')
+            return redirect('cadastro_funcionario')
+        
+
+
+        user = User.objects.create_user(username=nome, email=email, password=senha)
+        user.save()
+        messages.success(request, 'Usuário cadastrado com sucesso')
+        return redirect('dashboard')
+    
+    else:
+        return render(request, 'cadastro_funcionario.html')
+            
+
 def login(request):
     if request.method == 'POST':
         username = request.POST['username']
@@ -37,7 +75,8 @@ def estoque(request):
         dados={
             'produtos' : produtos
         }
-        return render(request, 'estoque.html', dados)
+        if User.is_authenticated:
+            return render(request, 'estoque.html', dados)
     else:
         return redirect('index')
 
@@ -46,4 +85,3 @@ def campo_vazio(campo):
 
 def senha_diferente(senha, senha2):
     return senha != senha2
-

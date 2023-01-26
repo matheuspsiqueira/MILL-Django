@@ -24,13 +24,7 @@
    
    <body>
 
-    
-         
-   <div class="navbar">
-     <a class="active" href="{% url 'index' %}"><i class="fa fa-fw fa-home"></i> Home</a> 
-     <a href="{% static '#' %}"><i class="fa fa-fw fa-envelope"></i> Contact</a> 
-     <a href="{% url 'login' %}"><i class="fa fa-fw fa-user"></i> Login</a>
-   </div>
+    {% include 'partials/_header.html' %}
    
    </body>
    
@@ -66,7 +60,7 @@
            <p>No segmento de gestão de estoque desde 2020, a KingsMen's S.A se mostra a parceria ideal dentre as várias opções de empresas de controle de fluxo de mercadoria.</p>
            <p>Composta por profissionais altamente qualificados e comprometidos com os objetivos dos clientes, a KingsMen's S.A é uma empresa de gestão de estoque que promove a organização e o controle de suas mercadorias em determinado espaço e tempo.</p>
            <p>Utilizamos metodologias modernas de gestão, mantendo o equilíbrio entre compras, armazenagem e entregas, controlando as entradas e as saídas das mercadorias, movimentando seu ciclo.</p>
-           <a href="{% static '#our-menu' %}" class="btn btn-default">Métodos da Gestão de Estoque</a>
+           <a href="{% static 'about-us' %}" class="btn btn-default">Métodos da Gestão de Estoque</a>
         </div>
         <div class="about-img" data-aos="fade-left">
            <div class="img-box">
@@ -80,7 +74,7 @@
   <!-- about section end -->
 
   <!-- menu section start -->
-  <section class="menu-section sec-padding" id="our-menu">
+  <section class="menu-section sec-padding" id="about-us">
     <div class="container">
       <div class="row">
         <div class="section-title">
