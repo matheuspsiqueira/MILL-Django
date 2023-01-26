@@ -42,8 +42,7 @@ def cadastrar_funcionario(request):
         return redirect('dashboard')
     
     else:
-        return render(request, 'cadastro_funcionario.html')
-            
+        return render(request, 'cadastro_funcionario.html')         
 
 def login(request):
     if request.method == 'POST':
@@ -68,7 +67,7 @@ def logout(request):
     auth.logout(request)
     return redirect('index')
 
-def estoque(request):
+def dashboard(request):
     if request.user.is_authenticated:
         id = request.user.id
         produtos = Produto.objects.order_by('-date_produto').filter(pessoa=id)
@@ -76,7 +75,7 @@ def estoque(request):
             'produtos' : produtos
         }
         if User.is_authenticated:
-            return render(request, 'estoque.html', dados)
+            return render(request, 'dashboard.html', dados)
     else:
         return redirect('index')
 

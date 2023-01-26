@@ -3,8 +3,12 @@ from produtos.models import Produto
 from django.contrib.auth.models import User
 
 
-def estoque(request):
-    return render (request, 'estoque.html')
+def estoque(request, produto_id):
+    produto = get_object_or_404(Produto, pk=produto_id)
+    produto_a_exibir = {
+        'produto' : produto
+    }
+    return render (request, 'estoque.html', produto_a_exibir)
 
 def cadastra_produto(request):
     if request.method == 'POST':
