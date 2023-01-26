@@ -27,15 +27,15 @@
 			<div class="card-header">
 				<h3>Login</h3>
 			</div>
-			{% include 'partials/_alertas_login.html' %}
+			{% include 'partials/_alertas.html' %}
 			<div class="card-body">
 				<form action="{% url 'login' %}" method="POST">
 					{% csrf_token %}
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
-							<span class="input-group-text"><i class="fas fa-user" for="username"></i></span>
+							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
-						<input id="username" type="text" class="form-control" placeholder="Usuário" name="username">
+						<input type="text" class="form-control" placeholder="Usuário" name="username">
 						
 					</div>
 					<div class="input-group form-group">

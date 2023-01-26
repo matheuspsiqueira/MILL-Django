@@ -34,31 +34,30 @@ def cadastrar_funcionario(request):
             messages.error(request, 'Usuário já cadastrado')
             return redirect('cadastro_funcionario')
         
-
-
         user = User.objects.create_user(username=nome, email=email, password=senha)
         user.save()
         messages.success(request, 'Usuário cadastrado com sucesso')
-        return redirect('dashboard')
+        return redirect('estoque')
     
     else:
         return render(request, 'cadastro_funcionario.html')         
 
 def login(request):
     if request.method == 'POST':
-        username = request.POST['username']
+        nome = request.POST['username']
         senha = request.POST['senha']
 
-        if campo_vazio(username) or campo_vazio(senha):
+        if campo_vazio(nome) or campo_vazio(senha):
             messages.error(request, 'Por favor, preencha os campos corretamente')
             return redirect('login')
 
-        if User.objects.filter(username=username).exists():
-            nome = User.objects.filter(username=username).values_list('username', flat=True).get()
+        if User.objects.filter(username=nome).exists():
+            nome = User.objects.filter(username=nome).values_list('username', flat=True).get()
             user = auth.authenticate(request, username=nome, password=senha)
 
             if user is not None:
                 auth.login(request, user)
+                messages.success(request, 'Login realizado com sucesso')
                 return redirect('estoque')
     else:
         return render(request, 'login.html')
@@ -67,7 +66,7 @@ def logout(request):
     auth.logout(request)
     return redirect('index')
 
-def dashboard(request):
+def estoque(request):
     if request.user.is_authenticated:
         id = request.user.id
         produtos = Produto.objects.order_by('-date_produto').filter(pessoa=id)
@@ -75,7 +74,7 @@ def dashboard(request):
             'produtos' : produtos
         }
         if User.is_authenticated:
-            return render(request, 'dashboard.html', dados)
+            return render(request, 'estoque.html', dados)
     else:
         return redirect('index')
 
