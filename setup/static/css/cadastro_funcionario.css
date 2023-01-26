@@ -1,0 +1,41 @@
+/* Form Style */
+.form_botao{
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid rgb(207, 207, 207);
+    border-radius: 10px;
+    
+}
+
+/* Form Label */
+label {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Form Input */
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 5px 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+/* Form Button */
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}

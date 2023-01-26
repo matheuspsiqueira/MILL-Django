@@ -1,0 +1,165 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastrar Funcionários</title>
+
+  <link href="{% static 'css/bootstrap_cadastro.css' %}" rel="stylesheet">
+  <script src="{% static 'js/cadastro_funcionario.js' %}" ></script>
+  <link href="{% static 'css/cadastro_funcionario.css' %}" rel="stylesheet">
+
+</head>
+  <body>
+
+    {% include 'partials/_alertas.html' %}
+
+    <div class="container-fluid">
+        <div class="container">
+          <!-- Title -->
+          <div class="d-flex justify-content-between align-items-lg-center py-3 flex-column flex-lg-row">
+            <h2 class="h2 mb-3 mb-lg-0">Cadastro de Funcionários</h2>
+            <div class="hstack gap-3">
+              <form action="{% url 'cadastro_funcionario' %}" method="POST">
+              {% csrf_token %}
+              <button class="btn btn-primary btn-sm btn-icon-text" type="submit">Salvar</button>
+              <a class="btn btn-secondary btn-sm btn-icon-text" href="{% url 'index' %}">Cancelar</a>
+            </div>
+          </div>
+          <!-- Main content -->
+          <div class="row">
+            <!-- Left side -->
+            <div class="col-lg-8">
+              <!-- Basic information -->
+              <div class="card mb-4">
+                <div class="card-body">
+                  <h3 class="h4 mb-4">Informações Básicas</h3>
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="mb-3">
+                        <label class="form-label">Primeiro Nome</label>
+                        <input type="text" class="form-control" name="nome" required>
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="mb-3">
+                        <label class="form-label">Último Nome</label>
+                        <input type="text" class="form-control" required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control"  method="POST" name="email" required>
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="mb-3">
+                        <label class="form-label">Telefone</label>
+                        <input type="tel" class="form-control" required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="mb-3">
+                        <label class="form-label">Senha</label>
+                        <input type="password" class="form-control" name="senha" required>
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="mb-3">
+                        <label class="form-label">Confirmação de Senha</label>
+                        <input type="password" class="form-control" name="senha2" required>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+            <!-- Status -->
+            <div class="col-lg-12">
+              <div class="mb-3">
+                <div class="card-body">
+                  <div class="form_botao">
+                    <label class="form-label">Cargo</label>
+                    <form action="{% url 'cadastro_funcionario' %}" method="POST">
+                      <select name="nivel" class="form-select" required>
+                        <option value="draft" >Escolher...</option>
+                        <option value="vendedor">Vendedor</option>
+                        <option value="coordenador">Coordenador</option>
+                        <option value="gerente">Gerente</option>
+                      </select>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <!-- Address -->
+          <div class="row">
+            <div class="col-lg-8">
+              <div class="card mb-4">
+                <div class="card-body">
+                  <h3 class="h4 mb-4">Endereço</h3>
+                  <div class="mb-3">
+                    <div class="col-lg-12">
+                    <label class="form-label">Endereço Linha 1</label>
+                    <input type="text" class="form-control" required>
+                  </div>
+                  <div class="mb-3">
+                    <div class="col-lg-12">
+                    <label class="form-label">Endereço Linha 2</label>
+                    <input type="text" class="form-control">
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="mb-3">
+                        <label class="form-label">País</label>
+                        <input type="text" class="form-control" required>
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="mb-3">
+                        <label class="form-label">Estado</label>
+                        <input type="text" class="form-control" required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="mb-3">
+                        <label class="form-label">Cidade</label>
+                        <input type="text" class="form-control" required>
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="mb-3">
+                        <label class="form-label">Bairro</label>
+                        <input type="text" class="form-control">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+              </div>
+            </div>
+          </div>
+            <!-- Notes -->
+            <div class="row">
+              <div class="col-lg-8">
+                <div class="card mb-4">
+                  <div class="card-body">
+                    <h3 class="h4 mb-4">Observações</h3>
+                  <textarea class="form-control" rows="1"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </body>
+</html>
