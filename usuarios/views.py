@@ -58,7 +58,7 @@ def login(request):
             if user is not None:
                 auth.login(request, user)
                 messages.success(request, 'Login realizado com sucesso')
-                return redirect('estoque')
+                return redirect('dashboard')
     else:
         return render(request, 'login.html')
 
@@ -66,15 +66,9 @@ def logout(request):
     auth.logout(request)
     return redirect('index')
 
-def estoque(request):
+def dashboard(request):
     if request.user.is_authenticated:
-        id = request.user.id
-        produtos = Produto.objects.order_by('-date_produto').filter(pessoa=id)
-        dados={
-            'produtos' : produtos
-        }
-        if User.is_authenticated:
-            return render(request, 'estoque.html', dados)
+        return render(request, 'dashboard.html')
     else:
         return redirect('index')
 

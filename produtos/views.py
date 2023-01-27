@@ -4,7 +4,16 @@ from django.contrib.auth.models import User
 
 
 def estoque(request):
-    return render (request, 'estoque.html')
+    if request.user.is_authenticated:
+        id = request.user.id
+        produtos = Produto.objects.order_by('-date_produto').filter(usuario=id)
+        dados={
+            'produtos' : produtos
+        }
+        if User.is_authenticated:
+            return render(request, 'estoque.html', dados)
+    else:
+        return redirect('index')
 
 def cadastra_produto(request):
     if request.method == 'POST':

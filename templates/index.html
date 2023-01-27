@@ -22,11 +22,9 @@
    <!-- header start -->
    <link rel="stylesheet" href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' %}">
    
-   <body>
 
     {% include 'partials/_header.html' %}
    
-   </body>
    
   <!-- header end -->
   <!-- home section start -->
@@ -74,11 +72,11 @@
   <!-- about section end -->
 
   <!-- menu section start -->
-  <section class="menu-section sec-padding" id="about-us">
+  <section class="menu-section sec-padding" id="our-menu">
     <div class="container">
       <div class="row">
         <div class="section-title">
-          <h2 data-title="Segmentos" data-aos="fade-up">Principais Métodos da Gestão de Estoque</h2>
+          <h2 data-title="Segmentos" data-aos="fade-up">Alguns Métodos de Controle de Estoque</h2>
         </div>
       </div>
       <div class="row menu-tab-content active" id="lunch">
@@ -87,48 +85,44 @@
             <img src="{% static 'img/metodos/img1.png' %}" alt="menu item thumbnail" class="img-area">
               <div class="section-title">
                 <h1 class="title">Método do custo específico</h1>
-                  <h4>Opções para controle de estoque recomendada para produtos como carros ou maquinários. Esse método atribui valor a cada unidade do estoque. Logo, ele é usado apenas quando é possível apurar o preço ou o custo de cada item, considerando que o valor total do estoque consiste na soma dos custos específicos dos itens.</h4>
+                  <h4>Método para controle de estoque recomendada para produtos com poucas unidades, mas com valor considerável, como veículos e grandes máquinas. Esse método atribui valor a cada unidade do estoque. Logo, ele é usado apenas quando é possível apurar o preço ou o custo de cada item, considerando que o valor total do estoque consiste na soma dos custos específicos dos itens. Por terem uma rotatividade menor, fica mais fácil diminuir o valor da mercadoria que sai do estoque do seu valor total, atualizando os dados.</h4>
               </div>
           </div>
         </div>
         <div class="row menu-tab-content active" id="lunch">
           <div class="menu-item" data-aos="fade-up-right">
             <div class="menu-item-title">
-              <img src="{% static 'img/menu/img-2.jpg' %}" alt="menu item thumbnail" class="img-area">
+              <img src="{% static 'img/metodos/img2.jpg' %}" alt="menu item thumbnail" class="img-area">
                 <div class="section-title">
-                  <h1 class="title">Gestão Financeira</h1>
-                    <h4>Assessoria para otimização da função financeira, com controles, indicadores de desempenho e medidas de racionalização de recursos.</h4>
+                  <h1 class="title">PEPS (Primeiro que Entra, Primeiro que Sai)</h1>
+                    <h4>Método para controle de estoque recomendado para produtos alimentícios e perecíveis, ajudando na redução de desperdícios. Trata-se de um dos métodos de gestão de estoque mais utilizados pelas empresas na atualidade. </h4>
+                    <h4>Entre as suas vantagens estão o controle da validade dos produtos, o combate a perdas e a aproximação do custo de cada produto ao seu custo real, uma vez que o cálculo é feito a partir das mercadorias mais velhas para as mais novas, evitando que os produtos estraguem nas prateleiras, a ordem cronológica de entrada dos produtos no estoque será priorizada para definir que os mais antigos são vendidos primeiramente.</h4>
                 </div>
             </div>
           </div>
         <div class="row menu-tab-content active" id="lunch">
             <div class="menu-item" data-aos="fade-up-right">
               <div class="menu-item-title">
-                <img src="{% static 'img/menu/img-3.jpg' %}" alt="menu item thumbnail" class="img-area">
+                <img src="{% static 'img/metodos/just-in-time.jpeg' %}" alt="menu item thumbnail" class="img-area">
                   <div class="section-title">
-                    <h1 class="title">Gestão Administrativa</h1>
-                      <h4>Assessoria para organização e otimização da área meio, racionalizando o macroprocesso de suporte operacional, manutenção, serviços gerais etc.</h4>
+                    <h1 class="title">Just in Time</h1>
+                      <h4>O Just in Time é um método de gestão desenvolvido especialmente para manter o estoque com a menor quantidade de mercadorias possível.
+                      A vantagem desse sistema de gestão é a redução de custos com armazenamento e compra de produtos. Mas é preciso um acompanhamento rigoroso por parte dos gestores, para evitar que a empresa perca boas oportunidades de vendas por não ter a quantidade suficiente de produtos disponível no estoque.
+                        É essencial contar com fornecedores ágeis, que sejam capazes de realizar as entregas de forma rápida e quantas vezes forem necessárias.
+                        </h4>
               </div>
             </div>
         </div>
         <div class="row menu-tab-content active" id="lunch">
           <div class="menu-item" data-aos="fade-up-right">
             <div class="menu-item-title">
-                <img src="{% static 'img/menu/img-4.jpg' %}" alt="menu item thumbnail" class="img-area">
+                <img src="{% static 'img/metodos/curva-abc-1.png' %}" alt="menu item thumbnail" class="img-area">
                   <div class="section-title">
-                    <h1 class="title">Gestão de Comunicação e Marketing</h1>
-                      <h4>Assessoria para a elaboração de planejamento e estruturação do MKT Mix para promoção da empresa e seus produtos.</h4>
-            </div>
-          </div>
-        </div>
-        <div class="row menu-tab-content active" id="lunch">
-          <div class="menu-item" data-aos="fade-up-right">
-            <div class="menu-item-title">
-                <img src="{% static 'img/menu/img-5.png' %}" alt="menu item thumbnail" class="img-area">
-                  <div class="section-title">
-                    <h1 class="title">Gestão de Riscos</h1>
-                      <h4>Assessoria para minimizar (ou até mesmo eliminar completamente) a possibilidade de impactos que sejam negativos para a organização, comprometendo a companhia ou o seu funcionamento, caso um desses riscos venha a se concretizar.</h4>
-                  </div>
+                    <h1 class="title">Curva ABC</h1>
+                      <h4>Esse método de gestão é muito eficiente em termos do ajustamento do processo de compras, baseia-se em 3 pilares: giro de estoque, faturamento e lucratividade. Além disso, ela é dividida entre as categorias A, B e C, que representam os produtos e suas variações dentro desses pilares.</h4>
+                      <h4>	A categoria A, classifica as mercadorias que possuem giro razoável, mas geram alta lucratividade e faturamento, são produtos que não podem faltar no estoque.</h4>
+                      <h4>	No caso da categoria B, são aqueles que devem corresponder à maior parte do estoque, pois possuem um giro alto, contribuindo bem para o aumento do faturamento, mas com a lucratividade razoável.</h4>
+                      <h4>	Por fim, os produtos da categoria C são aqueles com pouco giro, pouco lucro e pouco faturamento. Logo, a quantidade em estoque também é menor, mas ainda assim é importante para atender a demanda de todos os consumidores.</h4>
             </div>
           </div>
         </div>  
@@ -149,14 +143,14 @@
         <div class="testi-item" data-aos="zoom-in">
           <div class="testi-author">
              <div class="testi-author-name">
-               <h3>raj himachal</h3>
-               <span>food specialist</span>
+               <h3>Leonardo</h3>
+               <span>Gerente da Ambev</span>
              </div>
              <div class="testi-author-img">
-               <img src="{% static 'img/testimonials/1.jpg' %}" alt="testi author img">
+               <img src="{% static 'img/testimonials/10.jpg' %}" alt="testi author img">
              </div>
           </div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p>Eu estava procurando por um sistema de controle de estoque fácil de usar e o encontrei no [nome do site]. Ele me ajudou a manter o controle de todos os meus produtos e a tomar decisões informadas.</p>
           <div class="ratings">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -168,14 +162,14 @@
         <div class="testi-item" data-aos="zoom-in">
           <div class="testi-author">
              <div class="testi-author-name">
-               <h3>raj himachal</h3>
-               <span>food specialist</span>
+               <h3>Matheus Siqueira</h3>
+               <span>Gerente da Vila Mimosa</span>
              </div>
              <div class="testi-author-img">
-               <img src="{% static 'img/testimonials/2.jpg' %}" alt="testi author img">
+               <img src="{% static 'img/testimonials/20.jpg' %}" alt="testi author img">
              </div>
           </div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p>Antes de usar [nome do site], eu tinha dificuldade em controlar meu estoque, mas agora posso ver facilmente quais itens estão faltando e quando é hora de reabastecer.</p>
           <div class="ratings">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -187,14 +181,14 @@
         <div class="testi-item" data-aos="zoom-in">
           <div class="testi-author">
              <div class="testi-author-name">
-               <h3>raj himachal</h3>
-               <span>food specialist</span>
+               <h3>Lucas Palmeiras</h3>
+               <span>Gerente da Flores</span>
              </div>
              <div class="testi-author-img">
-               <img src="{% static 'img/testimonials/3.jpg' %}" alt="testi author img">
+               <img src="{% static 'img/testimonials/30.jpg' %}" alt="testi author img">
              </div>
           </div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p>Eu recomendo [nome do site] para qualquer pessoa que precise controlar seu estoque. Ele é fácil de usar e me ajuda a economizar tempo e dinheiro.</p>
           <div class="ratings">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -234,7 +228,7 @@
       </div>
       <div class="row">
         <div class="copyright">
-         PROJETO SENAC-RJ &copy; 2022 - Designed by Equipe MIL
+         PROJETO SENAC-RJ &copy; 2023 - Designed by Equipe MIL
         </div>
       </div>
     </div>
