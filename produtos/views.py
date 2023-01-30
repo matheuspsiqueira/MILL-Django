@@ -19,10 +19,10 @@ def cadastra_produto(request):
     if request.method == 'POST':
         nome_produto = request.POST['nome_produto']
         codigo_produto = request.POST['codigo_produto']
-        tamanho_produto = request.POST['tamanho_produto']
+        quantidade_produto = request.POST['quantidade_produto']
         nome_fornecedor = request.POST['nome_fornecedor']
         user = get_object_or_404(User, pk=request.user.id)
-        produto = Produto.objects.create(usuario=user, nome_produto=nome_produto, codigo_produto=codigo_produto, tamanho_produto=tamanho_produto, nome_fornecedor=nome_fornecedor)
+        produto = Produto.objects.create(usuario=user, nome_produto=nome_produto, codigo_produto=codigo_produto, quantidade_produto=quantidade_produto, nome_fornecedor=nome_fornecedor)
         produto.save()
         return redirect('estoque')
     else:

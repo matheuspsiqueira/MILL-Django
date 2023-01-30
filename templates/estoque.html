@@ -9,6 +9,9 @@
         
         <link rel="stylesheet" href="{% static '/css/estoque.css' %}">
         <link rel="stylesheet" href="{% static '/css/font-awesome.css' %}">
+        <link href="{% static 'css/font-dashboard.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'css/dashboard.css' %}" rel="stylesheet">
+
         <title>Estoque</title>
         <!--Icone-->
 	    <link rel="icon" href="{% static 'img/icone.ico' %}">
@@ -16,56 +19,190 @@
 
     <body>
 
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="main-box clearfix">
-                        <div class="table-responsive">
-                            <table class="table user-list">
-                                <thead>
-                                    <tr>
-                                        <th><span>Produto</span></th>
-                                        <th><span>Código</span></th>
-                                        <th class="text-center"><span>Tamanho</span></th>
-                                        <th><span>Fornecedor</span></th>
-                                        <th>&nbsp;</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="centralizar">
-                                            <h2>Camisa</h2>
-                                        </td>
-                                        <td class="centralizar">
-                                            C001
-                                        </td>
-                                        <td class="centralizar">
-                                            M
-                                        </td>
-                                        <td class="centralizar">
-                                            C&A
-                                        </td>
-                                        <td style="width: 20%;">
-                                            <a href="{% static '#' %}" class="table-link">
-                                                <span class="fa-stack">
-                                                    <i class="fa fa-square fa-stack-2x"></i>
-                                                    <i class="fa fa-pen fa-stack-1x fa-inverse"></i>
-                                                </span>
-                                            </a>
-                                            <a href="{% static '#' %}" class="table-link danger">
-                                                <span class="fa-stack">
-                                                    <i class="fa fa-square fa-stack-2x"></i>
-                                                    <i class="fa fa-trash fa-stack-1x fa-inverse"></i>
-                                                </span>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+        <!-- Page Wrapper -->
+        <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
+            {% csrf_token %}
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{% url 'dashboard' %}">                    
+                <div class="sidebar-brand-text mx-3">King's Men </div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'dashboard' %}">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'index' %}"><i class="fas fa-fw fa-home"></i>Home</a>
+            </li>
+
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Funcionários
+            </div>
+
+            <!-- Nav Item - Funcionários -->
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'cadastro_funcionario' %}"><i class="fas fa-fw fa-cog"></i>Cadastrar Funcionário</a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Produtos
+            </div>
+
+            <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link" href="{% static 'cadastra_produto' %}">
+                    <i class="fas fa-fw fa-chart-area"></i>Cadastrar Produto</a>
+            </li>
+
+            <!-- Nav Item - Tables -->
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'estoque' %}">
+                    <i class="fas fa-fw fa-table"></i>Estoque</a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        
+
+                      
+                        <!-- Nav Item - User Information -->
+                        
+                        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Estoque</h1>
                     </div>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="main-box clearfix">
+                <div class="table-responsive">
+                    <table class="table user-list">
+                        <thead>
+                            <tr>
+                                <th class="text-center"><span>Produto</span></th>
+                                <th class="text-center"><span>Código</span></th>
+                                <th class="text-center"><span>Tamanho</span></th>
+                                <th class="text-center"><span>Fornecedor</span></th>
+                                <th>&nbsp;</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="centralizar">
+                                    <h2>Camisa</h2>
+                                </td>
+                                <td class="centralizar">
+                                    C001
+                                </td>
+                                <td class="centralizar">
+                                    M
+                                </td>
+                                <td class="centralizar">
+                                    C&A
+                                </td>
+                                <td style="width: 20%;">
+                                    <a href="{% static '#' %}" class="table-link">
+                                        <span class="fa-stack">
+                                            <i class="fa fa-square fa-stack-2x"></i>
+                                            <i class="fa fa-pen fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
+                                    <a href="{% static '' %}" class="table-link danger">
+                                        <span class="fa-stack">
+                                            <i class="fa fa-square fa-stack-2x"></i>
+                                            <i class="fa fa-trash fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
+    </div>
+</div>
+
+            <!-- Bootstrap core JavaScript-->
+        <script src="{% static 'js/dashboard/jquery.min.js' %}"></script>
+        <script src="{% static 'js/dashboard/bootstrap.bundle.min.js' %}"></script>
+
+        <!-- Core plugin JavaScript-->
+        <script src="{% static 'js/dashboard/jquery.easing.min.js' %}"></script>
+
+        <!-- Custom scripts for all pages-->
+        <script src="{% static 'js/dashboard/sb-admin-2.min.js' %}"></script>
+
+        <!-- Page level plugins -->
+        <script src="{% static 'js/dashboard/Chart.min.js' %}"></script>
+
+        <!-- Page level custom scripts -->
+        <script src="{% static 'js/dashboard/chart-area-demo.js' %}"></script>
+        <script src="{% static 'js/dashboard/chart-pie-demo.js' %}"></script>
+
+
+
+
     </body>
 </html>

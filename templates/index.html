@@ -6,10 +6,9 @@
   <title>KingsMen's S.A</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="{% static '/css/font-awesome.css' %}">
-  <link rel="stylesheet" href="{% static '/css/aos.css' %}">
-  <link rel="stylesheet" href="{% static '/css/style.css' %}">
-  <link rel="stylesheet" href="{% static '/css/owl.carousel.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/font-awesome.css' %}">
+  <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+  <link rel="stylesheet" href="{% static 'css/teste.css' %}">
   <!--Icone-->
 	<link rel="icon" href="{% static 'img/icone.ico' %}">
 </head>
@@ -20,11 +19,33 @@
   <!-- page loader end -->
  
    <!-- header start -->
-   <link rel="stylesheet" href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' %}">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    
+  <body>
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <a href="{% url 'index' %}" class="navbar-brand">
+                <img class="logo" src="{% static '/img/Leao2.png' %}" alt="LOGISTIC">KingsMen's S.A
+            </a>
+                  {% if user.is_authenticated %}
 
-    {% include 'partials/_header.html' %}
-   
+                  <a class="links" href="{% url 'logout' %}"><i class="fa fa-fw fa-user"></i>Logout</a>
+                  <a class="links" href="{% url 'dashboard' %}"><i class="fa fa-fw fa-table"></i>Dashboard</a>
+                  <a class="links" href="{% url 'index' %}"><i class="fa fa-fw fa-home"></i>Home</a>
+
+                  {% else %}   
+
+                  <a class="links" href="{% url 'login' %}"><i class="fa fa-fw fa-user"></i> Login</a>
+                  <a class="links" href="{% static '#' %}"><i class="fa fa-fw fa-envelope"></i> Contact</a> 
+                  <a class="links" href="{% url 'index' %}"><i class="fa fa-fw fa-home"></i> Home</a> 
+
+                  {% endif %}
+                </div>
+              </div>
+          </nav>
+        </div>
+    </header>
+  </body>
    
   <!-- header end -->
   <!-- home section start -->
@@ -36,8 +57,9 @@
           <div class="titulo">
             <h1>KingsMen's S.A</h1>
           </div>
+          <br>
           <p>Somos uma empresa de gestão de estoque que acredita no método de estocagem e gerenciamento estratégico como diferenciais competitivos. Oferecemos soluções focadas e comprometidas com a necessidade específica do seu negócio.</p>
-          <a href="{% static '#our-menu' %}" class="btn btn-default">Conheça Nossas Áreas de Atuação</a>
+          <a href="#our-menu" class="btn btn-default">Conheça Nossas Áreas de Atuação</a>
         </div>
       </div>
     </div>
@@ -58,11 +80,11 @@
            <p>No segmento de gestão de estoque desde 2020, a KingsMen's S.A se mostra a parceria ideal dentre as várias opções de empresas de controle de fluxo de mercadoria.</p>
            <p>Composta por profissionais altamente qualificados e comprometidos com os objetivos dos clientes, a KingsMen's S.A é uma empresa de gestão de estoque que promove a organização e o controle de suas mercadorias em determinado espaço e tempo.</p>
            <p>Utilizamos metodologias modernas de gestão, mantendo o equilíbrio entre compras, armazenagem e entregas, controlando as entradas e as saídas das mercadorias, movimentando seu ciclo.</p>
-           <a href="{% static 'about-us' %}" class="btn btn-default">Métodos da Gestão de Estoque</a>
+           <a href="#our-menu" class="btn btn-default">Métodos de Controle de Estoque</a>
         </div>
         <div class="about-img" data-aos="fade-left">
            <div class="img-box">
-             <img src="{% static 'img/galpao-leao1.png' %}" alt="about img" class="img-sobre">
+             <img src="{% static '/img/galpao-leao1.png' %}" alt="about img" class="img-sobre">
              
            </div>
         </div>
@@ -82,7 +104,7 @@
       <div class="row menu-tab-content active" id="lunch">
         <div class="menu-item" data-aos="fade-up-right">
           <div class="menu-item-title">
-            <img src="{% static 'img/metodos/img1.png' %}" alt="menu item thumbnail" class="img-area">
+            <img src="{% static '/img/metodos/img1.png' %}" alt="menu item thumbnail" class="img-area">
               <div class="section-title">
                 <h1 class="title">Método do custo específico</h1>
                   <h4>Método para controle de estoque recomendada para produtos com poucas unidades, mas com valor considerável, como veículos e grandes máquinas. Esse método atribui valor a cada unidade do estoque. Logo, ele é usado apenas quando é possível apurar o preço ou o custo de cada item, considerando que o valor total do estoque consiste na soma dos custos específicos dos itens. Por terem uma rotatividade menor, fica mais fácil diminuir o valor da mercadoria que sai do estoque do seu valor total, atualizando os dados.</h4>
@@ -92,7 +114,7 @@
         <div class="row menu-tab-content active" id="lunch">
           <div class="menu-item" data-aos="fade-up-right">
             <div class="menu-item-title">
-              <img src="{% static 'img/metodos/img2.jpg' %}" alt="menu item thumbnail" class="img-area">
+              <img src="{% static '/img/metodos/img2.jpg' %}" alt="menu item thumbnail" class="img-area">
                 <div class="section-title">
                   <h1 class="title">PEPS (Primeiro que Entra, Primeiro que Sai)</h1>
                     <h4>Método para controle de estoque recomendado para produtos alimentícios e perecíveis, ajudando na redução de desperdícios. Trata-se de um dos métodos de gestão de estoque mais utilizados pelas empresas na atualidade. </h4>
@@ -103,7 +125,7 @@
         <div class="row menu-tab-content active" id="lunch">
             <div class="menu-item" data-aos="fade-up-right">
               <div class="menu-item-title">
-                <img src="{% static 'img/metodos/just-in-time.jpeg' %}" alt="menu item thumbnail" class="img-area">
+                <img src="{% static '/img/metodos/just-in-time.jpeg' %}" alt="menu item thumbnail" class="img-area">
                   <div class="section-title">
                     <h1 class="title">Just in Time</h1>
                       <h4>O Just in Time é um método de gestão desenvolvido especialmente para manter o estoque com a menor quantidade de mercadorias possível.
@@ -116,7 +138,7 @@
         <div class="row menu-tab-content active" id="lunch">
           <div class="menu-item" data-aos="fade-up-right">
             <div class="menu-item-title">
-                <img src="{% static 'img/metodos/curva-abc-1.png' %}" alt="menu item thumbnail" class="img-area">
+                <img src="{% static '/img/metodos/curva-abc-1.png' %}" alt="menu item thumbnail" class="img-area">
                   <div class="section-title">
                     <h1 class="title">Curva ABC</h1>
                       <h4>Esse método de gestão é muito eficiente em termos do ajustamento do processo de compras, baseia-se em 3 pilares: giro de estoque, faturamento e lucratividade. Além disso, ela é dividida entre as categorias A, B e C, que representam os produtos e suas variações dentro desses pilares.</h4>
@@ -147,7 +169,7 @@
                <span>Gerente da Ambev</span>
              </div>
              <div class="testi-author-img">
-               <img src="{% static 'img/testimonials/10.jpg' %}" alt="testi author img">
+               <img src="{% static '/img/testimonials/10.jpg' %}" alt="testi author img">
              </div>
           </div>
           <p>Eu estava procurando por um sistema de controle de estoque fácil de usar e o encontrei no [nome do site]. Ele me ajudou a manter o controle de todos os meus produtos e a tomar decisões informadas.</p>
@@ -166,7 +188,7 @@
                <span>Gerente da Vila Mimosa</span>
              </div>
              <div class="testi-author-img">
-               <img src="{% static 'img/testimonials/20.jpg' %}" alt="testi author img">
+               <img src="{% static '/img/testimonials/20.jpg' %}" alt="testi author img">
              </div>
           </div>
           <p>Antes de usar [nome do site], eu tinha dificuldade em controlar meu estoque, mas agora posso ver facilmente quais itens estão faltando e quando é hora de reabastecer.</p>
@@ -185,7 +207,7 @@
                <span>Gerente da Flores</span>
              </div>
              <div class="testi-author-img">
-               <img src="{% static 'img/testimonials/30.jpg' %}" alt="testi author img">
+               <img src="{% static '/img/testimonials/30.jpg' %}" alt="testi author img">
              </div>
           </div>
           <p>Eu recomendo [nome do site] para qualquer pessoa que precise controlar seu estoque. Ele é fácil de usar e me ajuda a economizar tempo e dinheiro.</p>
