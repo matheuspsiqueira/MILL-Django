@@ -1,0 +1,11 @@
+.navbar{
+  background-color: rgb(208, 255, 0);
+
+}
+
+.link{
+  float: right;
+  text-decoration: none;
+  color: black;
+  display: flex;
+}
