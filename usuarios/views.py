@@ -13,6 +13,7 @@ def cadastrar_funcionario(request):
         email = request.POST['email']
         senha = request.POST['senha']
         senha2 = request.POST['senha2']
+        nivel = request.POST['nivel']
 
         if campo_vazio(nome):
             messages.error(request, 'Nome não pode ficar em branco')

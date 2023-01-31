@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 def estoque(request):
     if request.user.is_authenticated:
-        produtos = Produto.objects.order_by('-date_produto')
+        produtos = Produto.objects.order_by('codigo_produto')
         dados={
             'produtos' : produtos
         }
