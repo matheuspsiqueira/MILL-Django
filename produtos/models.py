@@ -8,6 +8,7 @@ class Produto(models.Model):
     codigo_produto = models.IntegerField()
     quantidade_produto = models.IntegerField()
     nome_fornecedor = models.CharField(max_length=100)
+    valor_unitario = models.FloatField()
     date_produto = models.DateTimeField(default=datetime.now, blank=True)
     def __str__(self):
         return self.nome_produto

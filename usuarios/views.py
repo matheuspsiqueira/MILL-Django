@@ -37,7 +37,7 @@ def cadastrar_funcionario(request):
         user = User.objects.create_user(username=nome, email=email, password=senha)
         user.save()
         messages.success(request, 'Usuário cadastrado com sucesso')
-        return redirect('estoque')
+        return redirect('dashboard')
     
     else:
         return render(request, 'cadastro_funcionario.html')         
@@ -57,8 +57,10 @@ def login(request):
 
             if user is not None:
                 auth.login(request, user)
-                messages.success(request, 'Login realizado com sucesso')
                 return redirect('dashboard')
+        else:
+            messages.error(request, 'Usuário Inválido')
+            return redirect('login')
     else:
         return render(request, 'login.html')
 

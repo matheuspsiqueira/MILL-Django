@@ -72,7 +72,7 @@
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="{% static 'cadastra_produto' %}">
+                <a class="nav-link" href="{% url 'cadastra_produto' %}">
                     <i class="fas fa-fw fa-chart-area"></i>Cadastrar Produto</a>
             </li>
 
@@ -142,8 +142,9 @@
                             <tr>
                                 <th class="text-center"><span>Produto</span></th>
                                 <th class="text-center"><span>Código</span></th>
-                                <th class="text-center"><span>Tamanho</span></th>
                                 <th class="text-center"><span>Fornecedor</span></th>
+                                <th class="text-center"><span>Quantidade</span></th>
+                                <th class="text-center"><span>Valor</span></th>
                                 <th>&nbsp;</th>
                             </tr>
                         </thead>
@@ -156,10 +157,13 @@
                                     C001
                                 </td>
                                 <td class="centralizar">
-                                    M
+                                    C&A 
                                 </td>
                                 <td class="centralizar">
-                                    C&A
+                                    20
+                                </td>
+                                <td class="centralizar">
+                                    25
                                 </td>
                                 <td style="width: 20%;">
                                     <a href="{% static '#' %}" class="table-link">

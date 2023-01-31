@@ -5,8 +5,7 @@ from django.contrib.auth.models import User
 
 def estoque(request):
     if request.user.is_authenticated:
-        id = request.user.id
-        produtos = Produto.objects.order_by('-date_produto').filter(usuario=id)
+        produtos = Produto.objects.order_by('-date_produto')
         dados={
             'produtos' : produtos
         }
@@ -21,8 +20,9 @@ def cadastra_produto(request):
         codigo_produto = request.POST['codigo_produto']
         quantidade_produto = request.POST['quantidade_produto']
         nome_fornecedor = request.POST['nome_fornecedor']
+        valor_unitario = request.POST['valor_unitario']
         user = get_object_or_404(User, pk=request.user.id)
-        produto = Produto.objects.create(usuario=user, nome_produto=nome_produto, codigo_produto=codigo_produto, quantidade_produto=quantidade_produto, nome_fornecedor=nome_fornecedor)
+        produto = Produto.objects.create(usuario=user, nome_produto=nome_produto, codigo_produto=codigo_produto, quantidade_produto=quantidade_produto, nome_fornecedor=nome_fornecedor, valor_unitario=valor_unitario)
         produto.save()
         return redirect('estoque')
     else:
