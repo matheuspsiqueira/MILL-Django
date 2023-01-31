@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
 html,body{
-background-image: linear-gradient(to bottom right, rgb(0, 0, 0), rgb(0, 26, 97), rgb(0, 0, 0));
+background-image: linear-gradient(to bottom right, black ,rgb(49, 35, 0), black);
 background-size: cover;
 background-repeat: no-repeat;
 height: 100%;
