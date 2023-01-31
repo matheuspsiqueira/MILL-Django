@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import auth, messages
 from django.contrib.auth.models import User
-from produtos.models import Produto
+from usuarios.models import Usuario
 
 
 def index(request):
@@ -27,18 +27,32 @@ def cadastrar_funcionario(request):
             messages.error(request, 'As senhas devem ser iguais')
             return redirect('cadastro_funcionario')
 
-        if User.objects.filter(email=email).exists():
+        if Usuario.objects.filter(email=email).exists():
             messages.error(request, 'Usuário já cadastrado')
             return redirect('cadastro_funcionario')
         
-        if User.objects.filter(username=nome).exists():
+        if Usuario.objects.filter(nome_usuario=nome).exists():
             messages.error(request, 'Usuário já cadastrado')
             return redirect('cadastro_funcionario')
         
-        user = User.objects.create_user(username=nome, email=email, password=senha)
-        user.save()
-        messages.success(request, 'Usuário cadastrado com sucesso')
-        return redirect('dashboard')
+        if nivel == 'vendedor':
+            user = Usuario.objects.create(nome_usuario=nome, email=email, senha=senha, nivel=nivel)
+            user.save()
+            return redirect('dashboard')
+
+        if nivel == 'coordenador':
+            user = Usuario.objects.create(nome_usuario=nome, email=email, senha=senha, nivel=nivel)
+            user.save()
+            return redirect('dashboard')
+
+        if nivel == 'gerente':
+            user = Usuario.objects.create(nome_usuario=nome, email=email, senha=senha, nivel=nivel)
+            user.save()
+            return redirect('dashboard')
+        
+        if nivel == 'vazio':
+            messages.error(request, 'Selecione um cargo válido')
+            return redirect('cadastro_funcionario')
     
     else:
         return render(request, 'cadastro_funcionario.html')         
