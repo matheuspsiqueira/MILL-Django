@@ -44,7 +44,8 @@ def atualiza_produto(request):
         p = Produto.objects.get(pk=produto_id)
         p.nome_produto = request.POST['nome_produto']
         p.codigo_produto = request.POST['codigo_produto']
-        p.tamanho_produto = request.POST['tamanho_produto']
+        p.quantidade_produto = request.POST['quantidade_produto']
         p.nome_fornecedor = request.POST['nome_fornecedor']
+        p.valor_unitario = request.POST['valor_unitario']
         p.save()
         return redirect('estoque')

@@ -145,34 +145,44 @@
                                 <th class="text-center"><span>Fornecedor</span></th>
                                 <th class="text-center"><span>Quantidade</span></th>
                                 <th class="text-center"><span>Valor</span></th>
+                                <th class="text-center"><span>Data</span></th>
+                                <th class="text-center"><span>Usuário</span></th>
                                 <th>&nbsp;</th>
                             </tr>
                         </thead>
+                        {% if produtos %}
+                        {% for produto in produtos %}
                         <tbody>
                             <tr>
                                 <td class="centralizar">
-                                    <h2>Camisa</h2>
+                                    <h2>{{produto.nome_produto}}</h2>
                                 </td>
                                 <td class="centralizar">
-                                    C001
+                                    {{produto.codigo_produto}}
                                 </td>
                                 <td class="centralizar">
-                                    C&A 
+                                    {{produto.nome_fornecedor}} 
                                 </td>
                                 <td class="centralizar">
-                                    20
+                                    {{produto.quantidade_produto}}
                                 </td>
                                 <td class="centralizar">
-                                    25
+                                    {{produto.valor_unitario}}
+                                </td>
+                                <td class="centralizar">
+                                    {{produto.date_produto}}
+                                </td>
+                                <td class="centralizar">
+                                    {{produto.usuario}}
                                 </td>
                                 <td style="width: 20%;">
-                                    <a href="{% static '#' %}" class="table-link">
+                                    <a href="{% url 'edita_produto' produto.id %}" class="table-link">
                                         <span class="fa-stack">
                                             <i class="fa fa-square fa-stack-2x"></i>
                                             <i class="fa fa-pen fa-stack-1x fa-inverse"></i>
                                         </span>
                                     </a>
-                                    <a href="{% static '' %}" class="table-link danger">
+                                    <a href="{% url 'deleta_produto' produto.id %}" class="table-link danger">
                                         <span class="fa-stack">
                                             <i class="fa fa-square fa-stack-2x"></i>
                                             <i class="fa fa-trash fa-stack-1x fa-inverse"></i>
@@ -181,6 +191,8 @@
                                 </td>
                             </tr>
                         </tbody>
+                        {% endfor %}
+                        {% endif %}
                     </table>
                 </div>
             </div>

@@ -1,4 +1,4 @@
-import datetime
+from datetime import datetime
 from django.conf import settings
 from django.db import migrations, models
 import django.db.models.deletion
@@ -22,7 +22,7 @@ class Migration(migrations.Migration):
                 ('quantidade_produto', models.IntegerField()),
                 ('nome_fornecedor', models.CharField(max_length=100)),
                 ('valor_unitario', models.FloatField()),
-                ('date_produto', models.DateTimeField(blank=True, default=datetime.datetime.now)),
+                ('date_produto', models.DateTimeField(blank=True, default=datetime.now)),
                 ('usuario', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
         ),
