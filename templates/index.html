@@ -36,7 +36,7 @@
                   {% else %}   
 
                   <a class="links" href="{% url 'login' %}"><i class="fa fa-fw fa-user"></i> Login</a>
-                  <a class="links" href="{% static '#' %}"><i class="fa fa-fw fa-envelope"></i> Contact</a> 
+                  <a class="links" href="#footer"><i class="fa fa-fw fa-envelope"></i> Contact</a> 
                   <a class="links" href="{% url 'index' %}"><i class="fa fa-fw fa-home"></i> Home</a> 
 
                   {% endif %}
@@ -257,7 +257,7 @@
   </footer>
   <!-- footer end -->
   <script src="{% static '/js/aos.js' %}"></script> 
-<script src="{% static '/js/script.js' %}"></script>
+  <script src="{% static '/js/script.js' %}"></script>
 
 </body>
 </html>
