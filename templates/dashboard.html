@@ -11,7 +11,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Stronghold S.A - Dashboard</title>
+    <title>KingsMen's S.A - Dashboard</title>
 
     <!-- Custom fonts for this template-->
     <link href="{% static 'css/font-dashboard.css' %}" rel="stylesheet" type="text/css">
@@ -23,7 +23,7 @@
     <link href="{% static 'css/dashboard.css' %}" rel="stylesheet">
 
     <!--Icone-->
-    <link rel="icon" href="{% static 'img/icone2.ico' %}">
+	<link rel="icon" href="{% static 'img/Leao2.ico' %}">
 
 </head>
 
@@ -37,7 +37,7 @@
             {% csrf_token %}
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{% url 'dashboard' %}">                    
-                <div class="sidebar-brand-text mx-3">Stronghold S.A</div>
+                <div class="sidebar-brand-text mx-3">KingsMen's</div>
             </a>
 
             <!-- Divider -->
@@ -112,17 +112,13 @@
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-                    <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
+                    <h4>Bem vindo (a), {{user.username}}</h4>
                     
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
-
+                        
                         
 
-                      
                         <!-- Nav Item - User Information -->
                         
                         <a class="nav-link" href="{% url 'logout' %}">Logout</a>

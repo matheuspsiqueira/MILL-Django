@@ -12,9 +12,9 @@
         <link href="{% static 'css/font-dashboard.css' %}" rel="stylesheet" type="text/css">
         <link href="{% static 'css/dashboard.css' %}" rel="stylesheet">
 
-        <title>Stronghold S.A - Estoque</title>
+        <title>KingsMen's S.A - Estoque</title>
         <!--Icone-->
-	    <link rel="icon" href="{% static 'img/icone2.ico' %}">
+        <link rel="icon" href="{% static 'img/Leao2.ico' %}">
     </head>
 
     <body>
@@ -27,7 +27,7 @@
             {% csrf_token %}
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{% url 'dashboard' %}">                    
-                <div class="sidebar-brand-text mx-3">Stronghold S.A</div>
+                <div class="sidebar-brand-text mx-3">Contratante</div>
             </a>
 
             <!-- Divider -->
@@ -102,10 +102,7 @@
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-                    <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
+                    <h4>Bem Vindo (a), {{user.username}}</h4>
                     
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -155,25 +152,25 @@
                         <tbody>
                             <tr>
                                 <td class="centralizar">
-                                    <h2>{{produto.nome_produto}}</h2>
+                                    <h5>{{produto.nome_produto}}</h5>
                                 </td>
                                 <td class="centralizar">
-                                    {{produto.codigo_produto}}
+                                    <h5>{{produto.codigo_produto}}</h5>
                                 </td>
                                 <td class="centralizar">
-                                    {{produto.nome_fornecedor}} 
+                                    <h5>{{produto.nome_fornecedor}} </h5>
                                 </td>
                                 <td class="centralizar">
-                                    {{produto.quantidade_produto}}
+                                    <h5>{{produto.quantidade_produto}}</h5>
                                 </td>
                                 <td class="centralizar">
-                                    {{produto.valor_unitario}}
+                                    <h5>R${{produto.valor_unitario}}0</h5>
                                 </td>
                                 <td class="centralizar">
-                                    {{produto.date_produto}}
+                                    <h6>{{produto.date_produto}}</h6>
                                 </td>
                                 <td class="centralizar">
-                                    {{produto.usuario}}
+                                    <h5>{{produto.usuario}}</h5>
                                 </td>
                                 <td style="width: 20%;">
                                     <a href="{% url 'edita_produto' produto.id %}" class="table-link">

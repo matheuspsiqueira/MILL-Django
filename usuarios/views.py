@@ -13,7 +13,6 @@ def cadastrar_funcionario(request):
         email = request.POST['email']
         senha = request.POST['senha']
         senha2 = request.POST['senha2']
-        nivel = request.POST['nivel']
 
         if campo_vazio(nome):
             messages.error(request, 'Nome não pode ficar em branco')
@@ -27,32 +26,17 @@ def cadastrar_funcionario(request):
             messages.error(request, 'As senhas devem ser iguais')
             return redirect('cadastro_funcionario')
 
-        if Usuario.objects.filter(email=email).exists():
+        if User.objects.filter(email=email).exists():
             messages.error(request, 'Usuário já cadastrado')
             return redirect('cadastro_funcionario')
         
-        if Usuario.objects.filter(nome_usuario=nome).exists():
+        if User.objects.filter(username=nome).exists():
             messages.error(request, 'Usuário já cadastrado')
             return redirect('cadastro_funcionario')
         
-        if nivel == 'vendedor':
-            user = Usuario.objects.create(nome_usuario=nome, email=email, senha=senha, nivel=nivel)
-            user.save()
-            return redirect('dashboard')
-
-        if nivel == 'coordenador':
-            user = Usuario.objects.create(nome_usuario=nome, email=email, senha=senha, nivel=nivel)
-            user.save()
-            return redirect('dashboard')
-
-        if nivel == 'gerente':
-            user = Usuario.objects.create(nome_usuario=nome, email=email, senha=senha, nivel=nivel)
-            user.save()
-            return redirect('dashboard')
-        
-        if nivel == 'vazio':
-            messages.error(request, 'Selecione um cargo válido')
-            return redirect('cadastro_funcionario')
+        user = User.objects.create_user(username=nome, email=email, password=senha)
+        user.save()
+        return redirect('dashboard')
     
     else:
         return render(request, 'cadastro_funcionario.html')         

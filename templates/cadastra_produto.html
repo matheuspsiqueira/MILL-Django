@@ -12,7 +12,7 @@
   <script src="{% static '/js/cadastro_funcionario.js' %}" ></script>
   <link href="{% static '/css/cadastro_produto.css' %}" rel="stylesheet">
   <!--Icone-->
-  <link rel="icon" href="{% static 'img/icone2.ico' %}">
+	<link rel="icon" href="{% static 'img/Leao2.ico' %}">
 
 </head>
   <body>
@@ -70,7 +70,7 @@
                     <div class="col-lg-6">
                       <div class="mb-3">
                         <label class="form-label">Valor Unitário</label>
-                        <input type="number" class="form-control" name="valor_unitario" required>
+                        <input type="number" step="0.01" min="0.01" class="form-control" name="valor_unitario" required>
                       </div>
                     </div>
                   </div>
