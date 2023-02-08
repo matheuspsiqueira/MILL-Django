@@ -585,9 +585,12 @@ section{
         line-height: 65px;
     }
     .menu-item,
-    .about-text, 
+    .about-text,
     .about-img{
         width: 100%;
+    }
+    .img-area {
+        display: none;
     }
     .menu-item:nth-last-of-type(2):after{
        border-bottom: 2px dashed var(--dark-light);
@@ -597,6 +600,7 @@ section{
     }
     .about-text h3{
         font-size: 24px;
+        text-align: center;
     }
     .footer-item{
         width: 100%;
@@ -606,6 +610,19 @@ section{
     }
     .testi-item{
         width: calc(100% - 30px);
+    }
+
+    .text{
+        margin: none;
+        text-align: justify;
+        padding-left: 10%;
+
+    }
+    .title{
+        margin: 0;
+       padding-left: 33%;
+        text-align: center;
+        margin-bottom: 60px;
     }
 }
 @media(max-width:575px){
