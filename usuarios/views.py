@@ -43,7 +43,7 @@ def cadastrar_funcionario(request):
 def login(request):
     if request.method == 'POST':
         nome = request.POST['username']
-        senha = request.POST['senha']
+        senha = request.POST['password']
 
         if campo_vazio(nome) or campo_vazio(senha):
             messages.error(request, 'Por favor, preencha os campos corretamente')
@@ -52,10 +52,14 @@ def login(request):
         if User.objects.filter(username=nome).exists():
             nome = User.objects.filter(username=nome).values_list('username', flat=True).get()
             user = auth.authenticate(request, username=nome, password=senha)
-
-            if user is not None:
-                auth.login(request, user)
-                return redirect('dashboard')
+                    
+            if verificar_senha(nome, senha) == False:
+                messages.error(request, 'Senha Inválida')
+                return redirect('login')
+            else:
+                if user is not None:
+                    auth.login(request, user)
+                    return redirect('dashboard')
         else:
             messages.error(request, 'Usuário Inválido')
             return redirect('login')
@@ -77,3 +81,10 @@ def campo_vazio(campo):
 
 def senha_diferente(senha, senha2):
     return senha != senha2
+
+def verificar_senha(username, password):
+    user = User.objects.get(username=username)
+    if user.check_password(password):
+        return True
+    else:
+        return False
