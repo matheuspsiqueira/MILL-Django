@@ -3,14 +3,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <title>KingsMen's S.A</title>
+  <title>MILL S.A</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="{% static 'css/font-awesome.css' %}">
   <link rel="stylesheet" href="{% static 'css/aos.css' %}">
   <link rel="stylesheet" href="{% static 'css/teste.css' %}">
   <!--Icone-->
-	<link rel="icon" href="{% static 'img/Leao2.ico' %}">
 </head>
 <body>
 
@@ -24,9 +23,8 @@
   <body>
     <header>
         <nav class="navbar navbar-expand-lg">
-            <a href="{% url 'index' %}" class="navbar-brand">
-                <img class="logo" src="{% static '/img/Leao2.png' %}" alt="LOGISTIC">KingsMen's S.A
-            </a>
+            <a href="{% url 'index' %}" class="navbar-brand">MILL S.A</a>
+
                   {% if user.is_authenticated %}
 
                   <a class="links" href="{% url 'logout' %}"><i class="fa fa-fw fa-user"></i>Logout</a>
@@ -34,7 +32,7 @@
                   <a class="links" href="{% url 'index' %}"><i class="fa fa-fw fa-home"></i>Home</a>
 
                   {% else %}   
-
+                  <a class="links" href="{% url 'cadastro_funcionario' %}"><i class="fa fa-fw fa-user"></i> Cadastro</a>
                   <a class="links" href="{% url 'login' %}"><i class="fa fa-fw fa-user"></i> Login</a>
                   <a class="links" href="#footer"><i class="fa fa-fw fa-envelope"></i> Contact</a> 
                   <a class="links" href="{% url 'index' %}"><i class="fa fa-fw fa-home"></i> Home</a> 
@@ -55,7 +53,7 @@
       <div class="row min-vh-100 align-items-center">
         <div class="home-text" data-aos="fade-up" data-aos-duration="1000">
           <div class="titulo">
-            <h1>KingsMen's S.A</h1>
+            <h1>MILL S.A</h1>
           </div>
           <br>
           <p>Somos uma empresa de gestão de estoque que acredita no método de estocagem e gerenciamento estratégico como diferenciais competitivos. Oferecemos soluções focadas e comprometidas com a necessidade específica do seu negócio.</p>
@@ -76,9 +74,9 @@
       </div>
       <div class="row">
         <div class="about-text" data-aos="fade-right">
-           <h3>Bem-Vindo a KingsMen's S.A</h3>
-           <p>No segmento de gestão de estoque desde 2020, a KingsMen's S.A se mostra a parceria ideal dentre as várias opções de empresas de controle de fluxo de mercadoria.</p>
-           <p>Composta por profissionais altamente qualificados e comprometidos com os objetivos dos clientes, a KingsMen's S.A é uma empresa de gestão de estoque que promove a organização e o controle de suas mercadorias em determinado espaço e tempo.</p>
+           <h3>Bem-Vindo a MILL S.A</h3>
+           <p>No segmento de gestão de estoque desde 2020, a MILL S.A se mostra a parceria ideal dentre as várias opções de empresas de controle de fluxo de mercadoria.</p>
+           <p>Composta por profissionais altamente qualificados e comprometidos com os objetivos dos clientes, a MILL S.A é uma empresa de gestão de estoque que promove a organização e o controle de suas mercadorias em determinado espaço e tempo.</p>
            <p>Utilizamos metodologias modernas de gestão, mantendo o equilíbrio entre compras, armazenagem e entregas, controlando as entradas e as saídas das mercadorias, movimentando seu ciclo.</p>
            <a href="#our-menu" class="btn btn-default">Métodos de Controle de Estoque</a>
         </div>
@@ -172,7 +170,7 @@
                <img src="{% static '/img/testimonials/img1.png' %}" alt="testi author img">
              </div>
           </div>
-          <p>Eu estava procurando por um sistema de controle de estoque fácil de usar e o encontrei no KingsMen's. Ele me ajudou a manter o controle de todos os meus produtos e a tomar decisões informadas.</p>
+          <p>Eu estava procurando por um sistema de controle de estoque fácil de usar e o encontrei no MILL. Ele me ajudou a manter o controle de todos os meus produtos e a tomar decisões informadas.</p>
           <div class="ratings">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -191,7 +189,7 @@
                <img src="{% static '/img/testimonials/img2.png' %}" alt="testi author img">
              </div>
           </div>
-          <p>Antes de usar KingsMen's, eu tinha dificuldade em controlar meu estoque, mas agora posso ver facilmente quais itens estão faltando e quando é hora de reabastecer.</p>
+          <p>Antes de usar MILL, eu tinha dificuldade em controlar meu estoque, mas agora posso ver facilmente quais itens estão faltando e quando é hora de reabastecer.</p>
           <div class="ratings">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -210,7 +208,7 @@
                <img src="{% static '/img/testimonials/img3.png' %}" alt="testi author img">
              </div>
           </div>
-          <p>Eu recomendo KingsMen's para qualquer pessoa que precise controlar seu estoque. Ele é fácil de usar e me ajuda a economizar tempo e dinheiro.</p>
+          <p>Eu recomendo MILL para qualquer pessoa que precise controlar seu estoque. Ele é fácil de usar e me ajuda a economizar tempo e dinheiro.</p>
           <div class="ratings">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -239,7 +237,7 @@
         <div class="footer-item" data-aos="fade-up">
           <h3>Contato</h3>
           <p>21 9 1234-5678</p>
-          <p>KingsMen's@gmail.com</p>
+          <p>MILL@gmail.com</p>
           <div class="social-links">
             <a href="#"><i class="fab fa-facebook-f"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
